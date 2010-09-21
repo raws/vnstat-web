@@ -30,8 +30,7 @@ var Unit = Class.create({
 	getPower: function() { return this.data.unitPower; },
 	getLabel: function() { return this.data.unitLabel; },
 	fromBytes: function(bytes) {
-		var power = this.getPower();
-		if (power <= 0) { power = 1; }
+		var power = Math.max(this.getPower(), 1);
 		return bytes / Math.pow(10, power);
 	},
 	toString: function() {
