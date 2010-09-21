@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>HAL10000 - vnstat</title>
+		<link rel="stylesheet" href="stylesheets/screen.css" type="text/css" media="screen" charset="utf-8">
+		<script src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js" type="text/javascript" charset="utf-8"></script>
+		<script src="javascripts/json.js" type="text/javascript" charset="utf-8"></script>
+		<script src="javascripts/graph.js" type="text/javascript" charset="utf-8"></script>
+		<script src="javascripts/units.js" type="text/javascript" charset="utf-8"></script>
+		<script src="javascripts/stats.js" type="text/javascript" charset="utf-8"></script>
+		<script src="javascripts/traffic.js" type="text/javascript" charset="utf-8"></script>
+		<script src="javascripts/update.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			document.observe("dom:loaded", function() {
+				updateStats();
+			});
+		</script>
+	</head>
+	<body>
+		<header>
+			<h1>HAL10000's Network Usage on <span id="interface"></span></h1>
+			<p>Updated on <span id="updated"></span>.</p>
+		</header>
+		
+		<div id="graph-total" class="graph"></div>
+		<div id="graph-hourly" class="graph"></div>
+		<div id="graph-daily" class="graph"></div>
+		<div id="graph-monthly" class="graph"></div>
+	</body>
+</html>

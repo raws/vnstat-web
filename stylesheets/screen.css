@@ -1,0 +1,11 @@
+body {
+	width: 600px;
+	margin: 0 auto;
+	
+	font: 100 normal normal 1em/1.5em "Myriad Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+div.graph {
+	width: 600px;
+	margin: 20px 0;
+}
