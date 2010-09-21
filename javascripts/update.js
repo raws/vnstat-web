@@ -111,6 +111,42 @@ function updateStats() {
 				chg: "3.225,25,1,5"
 			});
 			$("graph-daily").update(g.getImageTag());
+			
+			/**
+			 * Monthly bandwidth usage
+			**/
+			var monthly = stats.traffic.monthly;
+			
+			sentUnit = monthly.map(function(m) {
+				return m.sent;
+			}).sortBy(function(s) {
+				return s.getBytes();
+			}).last().appropriateUnit();
+			
+			sentData = Graph.fillData(monthly.map(function(m) {
+				return m.sent.toUnit(sentUnit);
+			}), 12, 0);
+			sentYRange = Graph.getRangeFor(sentData);
+			
+			recvData = Graph.fillData(monthly.map(function(m) {
+				return m.received.toUnit(sentUnit);
+			}), 12, 0);
+			
+			g = new Graph({
+				cht: "lc",
+				chtt: "Last Year",
+				chco: colors.join(","),
+				chs: "600x300",
+				chd: "t:" + [sentData, recvData].map(function(a){return a.join(",");}).join("|"),
+				chdl: "Sent|Received",
+				chxt: "x,x,y,y",
+				chxr: [[0,0,12,1], [1,0,12], [2, sentYRange[0], sentYRange[1]]].map(function(a){return a.join(",");}).join("|"),
+				chxl: "1:|Months Ago|3:|" + sentUnit.getLabel(),
+				chxp: "1,6|3,50",
+				chds: sentYRange.join(","),
+				chg: "8.33,25,1,5"
+			});
+			$("graph-monthly").update(g.getImageTag());
 		}
 	});
 }
