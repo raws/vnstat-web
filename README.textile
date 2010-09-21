@@ -1,4 +1,4 @@
-vnstat-web is a little tool I wrote to make a few simple graphs from "vnstat":http://humdi.net/vnstat/ data. It is not the coolest thing ever, but it does what I want it to do, and it's fun to work on.
+vnstat-web is a little tool I wrote to make a few simple graphs from "vnstat":http://humdi.net/vnstat/ network usage data. It is not the raddest thing ever, but it quite simply does what I would like it to do.
 
 !vnstat-web/raw/master/images/readme-demo.png(Screenshot of vnstat-web)!
 
