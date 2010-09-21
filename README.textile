@@ -2,12 +2,12 @@ vnstat-web is a little tool I wrote to make a few simple graphs from "vnstat":ht
 
 !vnstat-web/raw/master/images/readme-demo.png(Screenshot of vnstat-web)!
 
-h2. Requirements
+h3. Requirements
 
 * "vnstat":http://humdi.net/vnstat/ >= 1.10
 * PHP >= 5.2.0
 
-h2. License <small>(MIT)</small>
+h3. License <small>(MIT)</small>
 
 <small>Copyright (c) 2010 Ross Paffett</small>
 
