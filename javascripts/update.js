@@ -6,7 +6,6 @@ function updateStats() {
 			var stats = new Stats(response.responseJSON);
 			Stats.instance = stats;
 			
-			$("interface").update(stats.interface);
 			$("updated").update(stats.updated);
 			
 			var colors = ["127fef", "ef8f12"];
@@ -27,6 +26,7 @@ function updateStats() {
 				chdl: "Sent|Received",
 				chtt: "All-Time",
 				chco: colors.join(","),
+				chf: "bg,s,ffffff00",
 				chbh: "a",
 				chxt: "x,x",
 				chxl: "1:|" + unit.getName().capitalize(),
@@ -62,6 +62,7 @@ function updateStats() {
 				cht: "lc",
 				chtt: "Last 24 Hours",
 				chco: colors.join(","),
+				chf: "bg,s,ffffff00",
 				chs: "600x300",
 				chd: "t:" + [sentData, recvData].map(function(a){return a.join(",");}).join("|"),
 				chdl: "Sent|Received",
@@ -100,6 +101,7 @@ function updateStats() {
 				cht: "lc",
 				chtt: "Last Month",
 				chco: colors.join(","),
+				chf: "bg,s,ffffff00",
 				chs: "600x300",
 				chd: "t:" + [sentData, recvData].map(function(a){return a.join(",");}).join("|"),
 				chdl: "Sent|Received",
@@ -136,6 +138,7 @@ function updateStats() {
 				cht: "lc",
 				chtt: "Last Year",
 				chco: colors.join(","),
+				chf: "bg,s,ffffff00",
 				chs: "600x300",
 				chd: "t:" + [sentData, recvData].map(function(a){return a.join(",");}).join("|"),
 				chdl: "Sent|Received",
